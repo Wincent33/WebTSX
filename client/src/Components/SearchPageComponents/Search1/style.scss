@@ -1,0 +1,31 @@
+@import "../../../Assets/Styles/Global/Global.scss";
+
+.search1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  bottom:10px;
+  .searchbar {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    background-color: green;
+    .advanced-filter-btn{
+      background-color: transparent;
+      border: 2px white solid;
+      border-radius: 20px;
+      color: white;
+      transition: 0.3s;
+      &:hover{
+       transform: scale(1.1);
+       cursor: pointer;
+       background-color: $primary4;
+       box-shadow: 10px 17px 21px -2px rgb(0 0 0 / 67%);
+    -webkit-box-shadow: 10px 17px 21px -2px rgb(0 0 0 / 67%);
+      }
+    }
+  }
+}

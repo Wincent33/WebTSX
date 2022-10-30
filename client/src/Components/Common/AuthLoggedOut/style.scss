@@ -1,0 +1,27 @@
+@import "../../../Assets/Styles/Global/Global.scss";    
+.user-auth {
+    position:relative;
+    border: 1px solid white;
+    border-radius: 20px;
+        padding: 10px;
+        // padding-right: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: 0.3s;
+    max-width: fit-content;
+    height:30px;
+    &:hover {
+      background-color: $primary4;
+      transform: scale(1.1);
+      cursor: pointer;
+      box-shadow: 10px 17px 21px -2px rgba(0, 0, 0, 0.67);
+      -webkit-box-shadow: 10px 17px 21px -2px rgba(0, 0, 0, 0.67);
+      -moz-box-shadow: 10px 17px 21px -2px rgba(0, 0, 0, 0.67);
+    }
+    label{
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }

@@ -1,0 +1,26 @@
+[
+  {
+    "value": "kota",
+    "label": "Pusat Kota"
+  },
+  {
+    "value": "suburban",
+    "label": "Suburban"
+  },
+  {
+    "value": "suburban-fringe",
+    "label": "Suburban Fringe"
+  },
+  {
+    "value": "urban-fringe",
+    "label": "Urban Fringe"
+  },
+  {
+    "value": "rural-urban-fringe",
+    "label": "Rural Urban Fringe"
+  },
+  {
+    "value": "kitchen",
+    "label": "Rural"
+  }
+]

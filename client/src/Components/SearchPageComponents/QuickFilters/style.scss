@@ -1,0 +1,57 @@
+@import "../../../Assets/Styles/Global/Global.scss";
+
+.quick-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 0px 50px;
+  .jenis-properti {
+    display: flex;
+    align-items: center;
+    .css-319lph-ValueContainer {
+      min-width: 130px;
+    }
+  }
+  .harga-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .css-319lph-ValueContainer {
+      padding: 3px;
+      min-width: 80px;
+      max-width: 130px;
+    }
+  }
+  .css-1s2u09g-control {
+    border-color: transparent !important;
+  }
+  .css-1okebmr-indicatorSeparator {
+    display: none;
+  }
+  .css-1pahdxg-control {
+    border-color: transparent;
+    box-shadow: none;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  .css-1gtu0rj-indicatorContainer {
+    color: $primary5;
+    padding: 3px;
+    &:hover {
+      color: $primary4;
+    }
+  }
+  .css-tlfecz-indicatorContainer {
+    color: $primary5;
+    padding: 3px;
+    &:hover {
+      color: $primary4;
+    }
+  }
+  .css-2613qy-menu {
+    width: 200px !important;
+  }
+}

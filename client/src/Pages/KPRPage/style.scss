@@ -1,0 +1,27 @@
+.kpr-page {
+  display: flex;
+  flex-direction: column;
+  .kpr1 {
+    .background {
+      height: 480px;
+      z-index: -1;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 100px;
+      max-width: 2000px;
+      // gap: 20px;
+      .company-logo {
+        width: 200px;
+        height: 100px;
+        z-index: 2;
+        z-index: 2;
+      }
+      .user-auth {
+        margin-left: 30px;
+      }
+    }
+  }
+}

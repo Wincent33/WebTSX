@@ -1,0 +1,13 @@
+.search-result {
+    display: flex;
+    flex-direction: row;
+    .searched {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 10px;
+      padding-top: 30px;
+    }
+  }

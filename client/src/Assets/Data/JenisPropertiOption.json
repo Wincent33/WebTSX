@@ -1,0 +1,34 @@
+[
+    {
+        "value": "RumahTapak",
+        "label": "Rumah Tapak"
+    },
+    {
+        "value": "RumahCluster",
+        "label": "Rumah Cluster"
+    },
+    {
+        "value": "RumahKopel",
+        "label": "Rumah Kopel"
+    },
+    {
+        "value": "Villa",
+        "label": "Villa"
+    },
+    {
+        "value": "Apartment",
+        "label": "Apartment / Kondominium"
+    },
+    {
+        "value": "Ruko",
+        "label": "Rumah Toko (Ruko)"
+    },
+    {
+        "value": "Rukan",
+        "label": "Rumah Kantor (Rukan)"
+    },
+    {
+        "value": "Kosan",
+        "label": "Kosan / Indekos"
+    }
+]

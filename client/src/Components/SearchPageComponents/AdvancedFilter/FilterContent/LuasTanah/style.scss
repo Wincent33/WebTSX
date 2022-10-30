@@ -1,0 +1,22 @@
+@import "../../../../../Assets/Styles/Global/Global.scss";
+
+.luas-tanah-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .luas-tanah-text {
+    margin-left: 30px;
+  }
+  .luas-tanah-min-max {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    input {
+      height: 20px;
+      padding-left: 10px;
+      width: 100px;
+    }
+  }
+}

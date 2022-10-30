@@ -1,0 +1,34 @@
+[
+  {
+    "value": "SHM",
+    "label": "Surat Hak Milik (SHM)"
+  },
+  {
+    "value": "HGB",
+    "label": "Hak Guna Bangunan (HGB)"
+  },
+  {
+    "value": "Girik",
+    "label": "Girik/Petok"
+  },
+  {
+    "value": "AJB",
+    "label": "Akta Jual Beli (AJB)"
+  },
+  {
+    "value": "SHSRS",
+    "label": "Sertifikat Hak Satuan Rumah Susun"
+  },
+  {
+    "value": "PPJB",
+    "label": "Perjanjian Pengikatan Jual Beli (PPJB)"
+  },
+  {
+    "value": "HakSewa",
+    "label": "Hak Sewa"
+  },
+  {
+    "value": "SertifikatBP",
+    "label": "Sertifikat Belum Pecah"
+  }
+]

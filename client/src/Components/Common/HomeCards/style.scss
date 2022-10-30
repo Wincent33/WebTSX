@@ -1,0 +1,64 @@
+@import "../../../Assets//Styles/Global/Global.scss";
+
+.homecard-container {
+  width: 350px;
+  height: max-content;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: black 1px solid;
+  .homecard-top {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .card-slider {
+    transform: translateX(-10px);
+    width: 370px;
+  }
+  .homecard-bot-info {
+    display: flex;
+    flex-direction: column;
+    .homecard-bot-top {
+      padding: 0 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        color: gray;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 5px 0px;
+      }
+      h5 {
+        font-size: 16px;
+        margin: 5px 0px;
+      }
+    }
+    .homecard-bot-bot {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .homecard-bot-tags {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        background-color: $primary4;
+        padding: 3px 10px;
+        border-radius: 10px;
+        border: 2px solid $primary5;
+        p {
+          margin: 0;
+          font-weight: 600;
+          color: white;
+        }
+      }
+    }
+  }
+}

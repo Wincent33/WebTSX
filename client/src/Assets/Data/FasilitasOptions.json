@@ -1,0 +1,34 @@
+[
+    {
+        "value": "parkiran-mobil",
+        "label": "Parkir Mobil"
+    },
+    {
+        "value": "security",
+        "label": "Security"
+    },
+    {
+        "value": "garden",
+        "label": "Garden"
+    },
+    {
+        "value": "sport-center",
+        "label": "Sport Center"
+    },
+    {
+        "value": "private-pool",
+        "label": "Private Pool"
+    },
+    {
+        "value": "kitchen",
+        "label": "Kitchen"
+    },
+    {
+        "value": "maid-room",
+        "label": "Maid Room"
+    },
+    {
+        "value": "balcony",
+        "label": "Balcony"
+    }
+]

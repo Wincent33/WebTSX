@@ -1,0 +1,110 @@
+@import "../../../../../Assets/Styles/Global/Global.scss";
+
+.price-slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  float: left;
+  padding: 10px;
+  padding-left: 10%;
+  width: 100%;
+  height: fit-content;
+
+  .price-slider-text {
+    display: flex;
+    gap: 10px;
+    color: black;
+  }
+  .slider-container {
+    background-color: $primary4;
+    width: 80%;
+    padding: 3px 12px 5px 5px;
+    border-radius: 10px;
+
+    .price-slider-btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      .price-slider-btn-width {
+        // panjang slider in general
+        width: 99%;
+      }
+    }
+
+    .price-slider-btn {
+      margin-top: -10px;
+      font-size: 14px;
+      text-align: center;
+      border: 0 solid transparent;
+      color: #fff;
+      display: inline-block;
+      // padding: 12px 25px;
+    }
+  }
+}
+
+.rc-slider {
+  position: relative;
+  height: 16px;
+  padding: 5px !important;
+  border-radius: 6px;
+  touch-action: none;
+  box-sizing: border-box;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+}
+.rc-slider * {
+  box-sizing: border-box;
+}
+.rc-slider-rail {
+  position: absolute;
+  background-color: white !important;
+  border-radius: 6px;
+  width: 99% !important;
+}
+
+.rc-slider-track {
+  position: absolute;
+  height: 100%;
+  border-radius: 6px;
+  opacity: 100% !important;
+  background-color: $primary5 !important;
+}
+
+.rc-slider-handle {
+  opacity: 1 !important;
+  position: absolute;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 50% !important;
+  background-color: $primary5 !important;
+  touch-action: pan-x;
+}
+
+.rc-slider-handle-1 {
+  transform: translateX(-30%) translateY(15%) !important;
+}
+
+.rc-slider-handle-2 {
+  transform: translateX(-30%) translateY(15%) !important;
+}
+span {
+  font-size: 16px;
+  font-weight: 600;
+  width: 30px;
+}
+
+.rc-slider-dot {
+  background-color: $primary5 !important;
+  width: 8px !important;
+  height: 8px !important;
+  border: none !important;
+}
+
+.rc-slider-step {
+  width: 99% !important;
+}

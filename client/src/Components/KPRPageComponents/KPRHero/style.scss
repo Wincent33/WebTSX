@@ -1,0 +1,26 @@
+@import "../../../Assets/Styles/Global/Global.scss";
+
+.KPR-hero {
+  margin-top: 80px;
+  color: black;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+
+  .hero-right {
+    h1 {
+      color: white;
+      font-size: 64px;
+    }
+    p {
+      color: white;
+      font-size: 24px;
+    }
+  }
+  .hero-left {
+    img {
+      width: 450px;
+    }
+  }
+}

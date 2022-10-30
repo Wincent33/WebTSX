@@ -1,0 +1,87 @@
+.rc-slider {
+  position: relative;
+  height: 16px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  touch-action: none;
+  box-sizing: border-box;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+}
+.rc-slider * {
+  box-sizing: border-box;
+}
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: blue !important;
+  border-radius: 6px;
+}
+
+.rc-slider-track {
+  position: absolute;
+  height: 100%;
+  border-radius: 6px;
+  opacity: 100% !important;
+}
+
+.rc-slider-handle {
+  opacity: 1 !important;
+  position: absolute;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 0% !important;
+  background-color: white !important;
+  touch-action: pan-x;
+  border: solid 1px var(--color-red) !important;
+}
+
+.rc-slider-handle-1 {
+  transform: translateX(0) !important;
+}
+
+.rc-slider-handle-2 {
+  transform: translateX(100%) !important;
+}
+
+.mka__range-width {
+  width: 15rem;
+  margin-right: 10px;
+}
+
+.mka__range-alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  float: left;
+  background-color: blue;
+  padding: 10px;
+}
+
+.mka__range-text {
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.mka__range-button {
+  margin-top: -10px;
+  font-size: 14px;
+  text-align: center;
+  border: 0 solid transparent;
+  background: #db2d2e;
+  color: #fff;
+  display: inline-block;
+  padding: 12px 25px;
+}
+
+.mka__range-btn-align {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}

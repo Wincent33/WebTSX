@@ -1,0 +1,97 @@
+@import "../../../../../Assets/Styles/Global/Global.scss";
+
+.kamarNWCCounter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  .kamar-counter {
+    .kamar-text {
+      font-weight: 600;
+    }
+    .kamar-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .kamar-btn {
+        display: flex;
+        background-color: $primary5;
+        color: white;
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px $primary5 solid;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $primary4;
+        }
+      }
+      .jumlah-kamar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        .bedroom-icon {
+          width: 40px;
+          height: 40px;
+        }
+        h2 {
+          word-break: keep-all;
+          padding: 15px;
+          width: 40px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .wc-counter {
+    .wc-text {
+      font-weight: 600;
+    }
+    .wc-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .wc-btn {
+        display: flex;
+        background-color: $primary5;
+        color: white;
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px $primary5 solid;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $primary4;
+        }
+      }
+      .jumlah-wc {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        .bathroom-icon {
+          width: 40px;
+          height: 40px;
+        }
+        h2 {
+          padding: 15px;
+          width: 40px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
