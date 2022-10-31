@@ -1,7 +1,7 @@
 import Axios from "axios";
 
-export const submitPesan = (data) => {
-  Axios.post("http://localhost:3001/api/insert", data)
+export const submitDaftar = (data) => {
+  Axios.post("http://localhost:5000/api/login", data)
     .then((res) => {
       alert(res.data);
     })

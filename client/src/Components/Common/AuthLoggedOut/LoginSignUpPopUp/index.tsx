@@ -4,6 +4,7 @@ import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import "./style.scss";
+import Axios from "axios";
 
 function LoginDaftarPopUp(props: any) {
   if (props.trigger) {
@@ -30,7 +31,29 @@ export default LoginDaftarPopUp;
 
 const LoginContent = () => {
   const [daftar, setDaftar] = useState(true);
+  const [daftarValue, setDaftarValue] = useState({
+    email: "",
+    user_name: "",
+    password: "",
+  });
 
+  const submitDaftar = () => {
+    Axios.post("http://localhost:5000/api/signin/post")
+      .then((res) => {
+        alert(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const handleDaftarOnChange = (e: any) => {
+    const { name, value } = e.target;
+    setDaftarValue({
+      ...daftarValue,
+      [name]: value,
+    });
+  };
   if (daftar) {
     return (
       <div className="login-content">
@@ -91,22 +114,40 @@ const LoginContent = () => {
         <h3 className="title">Daftar ke website</h3>
         <div className="daftar-input">
           <AiOutlineUser className="icon" size={25} />
-          <input type="text" placeholder="Username" />
+          <input
+            type="text"
+            name="user_name"
+            onChange={handleDaftarOnChange}
+            placeholder="Username"
+            value={daftarValue.user_name}
+          />
         </div>
         <div className="daftar-input">
           <AiOutlineMail className="icon" size={25} />
-          <input type="email" placeholder="E-mail" />
+          <input
+            type="email"
+            name="email"
+            onChange={handleDaftarOnChange}
+            placeholder="E-mail"
+            value={daftarValue.email}
+          />
         </div>
         <div className="daftar-input">
           <BsKey className="icon" size={25} />
-          <input type="password" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            onChange={handleDaftarOnChange}
+            placeholder="Password"
+            value={daftarValue.password}
+          />
         </div>
         <div className="daftar-input">
           <BsKey className="icon" size={25} />
           <input type="password" placeholder="Re-enter Password" />
         </div>
 
-        <div className="confirm">
+        <div className="confirm" onClick={submitDaftar}>
           <h3>Daftar</h3>
         </div>
         <h4>---atau---</h4>
