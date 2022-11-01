@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import "../../../Assets/Styles/Global/LoginSignupPopUp.scss";
 import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";

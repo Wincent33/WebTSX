@@ -4,19 +4,30 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mysql = require("mysql2");
 
-var con = mysql.createConnection({
+const con = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "SharkFangs8899",
+  database: "webtsx",
 });
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
 });
 
-con.connect(function (err) {
-  if (err) throw err;
-  console.log("Connection Successful!");
-});
+app.use(cors())
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// con.connect(function (err) {
+//   if (err) {throw err}
+//   else
+//   {console.log("Connection Successful!");}
+// });
+
+// con.connect(function (err) {
+//   if (err) throw err
+//   console.log("Connection Successful!");
+// });
 
 app.post("/api/signin/post", (req, res) => {
   console.log(req.body);
@@ -40,17 +51,17 @@ app.post("/api/signin/post", (req, res) => {
   });
 });
 
-// app.get("/", (req, res) => {
-//   console.log("Responding to root route");
-//   res.send("Hello");
-// });
+app.get("/", (req, res) => {
+  console.log("Responding to root route");
+  res.send("Hello");
+});
 
 // app.post("/api/login", (req, res) => {
 //   console.log(req.body);
 // });
-// app.get("/test", (req, res) => {
-//   res.send("Server is Healthy!");
-// });
+app.get("/test", (req, res) => {
+  res.send("Server is Healthy!");
+});
 // app.get("/api/signin/get", (req, res) => {
 //   const sqlSelect = "SELECT * FROM user";
 //   db.query(sqlSelect, (err, result) => {
