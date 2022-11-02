@@ -13,15 +13,15 @@ const SearchPage: React.FC = () => {
   const [trigger, setTrigger] = useState<boolean>(false);
   return (
     <div className="searchpage">
-      <MovingBackground/>
+      <MovingBackground />
       <div className="navbar">
         <img className="company-logo" src="" alt="logo" />
         <NavBar />
-        <AuthLoggedOut/>
+        <AuthLoggedOut />
       </div>
       <LoginDaftarPopUp trigger={trigger} setTrigger={setTrigger} />
-      <Search1/>
-      <SearchResults/>
+      <Search1 />
+      <SearchResults />
     </div>
   );
 };
