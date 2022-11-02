@@ -1,38 +1,62 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql2");
+const dotenv = require("dotenv");
+dotenv.config();
+const port = process.env.PORT;
+const bodyParser = require("body-parser");
 const cors = require("cors");
-app.use(cors());
-app.use(express.json);
-const db = mysql.createConnection({
-  user: "root",
+
+const mysql = require("mysql2");
+const e = require("express");
+const db = mysql.createPool({
   host: "localhost",
+  user: "root",
   password: "SharkFangs8899",
   database: "webtsx",
 });
 
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/api/get", (req, res) => {
+  const sqlSelect = "SELECT * FROM tabel_kontak";
+  db.query(sqlSelect, (err, result) => {
+    console.log(result);
+  });
+});
+
 app.post("/user/create", (req, res) => {
+  console.log(req.body);
   const email = req.body.email;
   const password = req.body.password;
   const user_name = req.body.user_name;
 
-  db.query(
-    "INSERT INTO user (email, password, user_name) VALUES (?,?,?)",
-    [email, password, user_name],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send("Values Inserted");
-      }
+  const query = "INSERT INTO user (email, password, user_name) VALUES (?,?,?)";
+
+  db.query(query, [email, password, user_name], (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Values Inserted");
     }
-  );
-});
-app.get("/", (request, response) => {
-  response.send("Hello World!");
-  console.log("nihao");
+  });
 });
 
-app.listen(5000, () => {
-  console.log("server is running on port 5000");
+app.get("/user/get", (req, res) => {
+  const query = "SELECT * from user";
+  db.query(query, (err, result) => {
+    if (err) {
+      console.log("error:", err);
+      return;
+    } else res.send(result);
+  });
+});
+
+app.get("/test", (req, res) => {
+  res.send("server is healthy");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

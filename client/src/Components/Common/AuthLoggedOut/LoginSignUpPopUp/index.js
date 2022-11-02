@@ -39,7 +39,7 @@ const LoginContent = () => {
 
   const submitDaftar = () => {
     console.log(daftarValue);
-    Axios.post("http://localhost:5000/user/create", {
+    Axios.post("http://localhost:8000/user/create", {
       email: daftarValue.email,
       password: daftarValue.password,
       user_name: daftarValue.user_name,
