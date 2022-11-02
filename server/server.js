@@ -1,70 +1,38 @@
 const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
 const cors = require("cors");
-const mysql = require("mysql2");
 
-const con = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "SharkFangs8899",
-  database: "webtsx",
-});
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
-});
+const app = express();
 
-app.use(cors())
+
+
+
+var corsOptions = {
+  origin: "http://localhost:5000"
+};
+
+app.use(cors(corsOptions));
+
+// parse requests of content-type - application/json
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-// con.connect(function (err) {
-//   if (err) {throw err}
-//   else
-//   {console.log("Connection Successful!");}
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+//
+const db = require("./Models/index.js");
+db.sequelize.sync();
+//
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
 // });
-
-// con.connect(function (err) {
-//   if (err) throw err
-//   console.log("Connection Successful!");
-// });
-
-app.post("/api/signin/post", (req, res) => {
-  console.log(req.body);
-  const email = req.body.email;
-  const user_name = req.body.user_name;
-  const password = req.body.password;
-
-  const query =
-    "INSERT INTO `user` (`email`, `user_name`, `password`) VALUES (?, ?, ?);";
-
-  con.query(query, [email, user_name, password], (err, result) => {
-    console.log(err, result);
-    if (err) {
-      res.send(err);
-    } else {
-      console.log("success");
-      res.send("successfully added to db");
-    }
-    // console.log(err);
-    //console.log(result)
-  });
+//
+// simple route
+app.get("/", (req, res) =>   {
+  res.json({ message: "Welcome Nigger!" });
 });
 
-app.get("/", (req, res) => {
-  console.log("Responding to root route");
-  res.send("Hello");
+// set port, listen for requests
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
-// app.post("/api/login", (req, res) => {
-//   console.log(req.body);
-// });
-app.get("/test", (req, res) => {
-  res.send("Server is Healthy!");
-});
-// app.get("/api/signin/get", (req, res) => {
-//   const sqlSelect = "SELECT * FROM user";
-//   db.query(sqlSelect, (err, result) => {
-//     console.log(result);
-//   });
-// });
