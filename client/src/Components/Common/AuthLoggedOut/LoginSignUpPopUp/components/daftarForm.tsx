@@ -3,7 +3,7 @@ import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { submitDaftar } from "../api/submitAPI";
-
+import validateEmail from "../utils/validateEmail";
 const DaftarForm = ({ setDaftar }: any) => {
   const [daftarValue, setDaftarValue] = useState({
     email: "",
@@ -11,21 +11,47 @@ const DaftarForm = ({ setDaftar }: any) => {
     password: "",
     repassword: "",
   });
+  const [errMsg, setErrMsg] = useState(false);
+
   const handleDaftarOnChange = (e: any) => {
     const { name, value } = e.target;
     setDaftarValue({
       ...daftarValue,
       [name]: value,
     });
+    setErrMsg(false);
   };
   const handleDaftarOnSubmit = submitDaftar(daftarValue);
+
   const daftarFormDiscipline = () => {
+    setErrMsg(true);
     if (daftarValue.password !== daftarValue.repassword) {
       console.log("Password should be the identical");
+      return <>"Password should be the identical"</>;
+    }
+    if (!validateEmail(daftarValue.email)) {
+      console.log("Email is not Valid");
+      return <>"Email is not Valid"</>;
     }
     //email discipline
     else {
       handleDaftarOnSubmit();
+      return <></>;
+    }
+  };
+
+  const ErrorMessage = () => {
+    if (errMsg === true) {
+      if (!validateEmail(daftarValue.email)) {
+        return <p>Format Email Anda Salah</p>;
+      }
+      if (daftarValue.password !== daftarValue.repassword) {
+        return <p>Pastikan Password Anda Sama</p>;
+      } else {
+        return <></>;
+      }
+    } else {
+      return <></>;
     }
   };
   return (
@@ -71,7 +97,7 @@ const DaftarForm = ({ setDaftar }: any) => {
           value={daftarValue.repassword}
         />
       </div>
-
+      <ErrorMessage />
       <div className="confirm" onClick={daftarFormDiscipline}>
         <h3>Daftar</h3>
       </div>
