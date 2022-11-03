@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const mysql = require("mysql2");
-const e = require("express");
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -20,9 +19,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api/get", (req, res) => {
-  const sqlSelect = "SELECT * FROM tabel_kontak";
+  const sqlSelect = "SELECT * FROM user";
   db.query(sqlSelect, (err, result) => {
     console.log(result);
+    res.send(result)
   });
 });
 
