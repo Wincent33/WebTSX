@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
-import LoginForm from "./components/loginForm";
-import DaftarForm from "./components/daftarForm";
+import LoginForm from "./components/LoginForm";
+import DaftarForm from "./components/DaftarForm";
 
 function LoginDaftarPopUp(props: any) {
   if (props.trigger) {

@@ -2,6 +2,7 @@ import React from "react";
 import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import "./style.scss";
 const LoginForm = ({ setDaftar }: any) => {
   return (
     <div className="login-content">
