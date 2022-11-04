@@ -39,21 +39,27 @@ const DaftarForm = ({ setDaftar }: any) => {
       return <></>;
     }
   };
+  const [emailErrHover, setEmailErrHOver] = useState(false)
+  // const handleMouseOver = () => {
+  //   setEmailErrHOver(true);
+  // };
 
-  const ErrorMessage = () => {
-    if (errMsg === true) {
-      if (!validateEmail(daftarValue.email)) {
-        return <p>Format Email Anda Salah</p>;
-      }
-      if (daftarValue.password !== daftarValue.repassword) {
-        return <p>Pastikan Password Anda Sama</p>;
-      } else {
-        return <></>;
-      }
-    } else {
-      return <></>;
-    }
-  };
+  // const handleMouseOut = () => {
+  //   setEmailErrHOver(false);
+  // };
+  const EmailErr = () => {
+    if (!validateEmail(daftarValue.email)) {
+      console.log("Email is not Valid");
+      return <>"Email is not Valid"</>;
+    }else return<></>
+  }
+  const PassErr = () =>{
+    if (errMsg===true){
+      if(daftarValue.password !== daftarValue.repassword){
+        return<>Password Not the Same</>
+      } else return <></>
+    } else return <></>
+  }
   return (
     <div className="daftar-content">
       <h3 className="title">Daftar ke website</h3>
@@ -77,6 +83,7 @@ const DaftarForm = ({ setDaftar }: any) => {
           value={daftarValue.email}
         />
       </div>
+      <EmailErr/>
       <div className="daftar-input">
         <BsKey className="icon" size={25} />
         <input
@@ -87,6 +94,7 @@ const DaftarForm = ({ setDaftar }: any) => {
           value={daftarValue.password}
         />
       </div>
+      <PassErr/>
       <div className="daftar-input">
         <BsKey className="icon" size={25} />
         <input
@@ -97,7 +105,7 @@ const DaftarForm = ({ setDaftar }: any) => {
           value={daftarValue.repassword}
         />
       </div>
-      <ErrorMessage />
+      {/* <ErrorMessage /> */}
       <div className="confirm" onClick={daftarFormDiscipline}>
         <h3>Daftar</h3>
       </div>
