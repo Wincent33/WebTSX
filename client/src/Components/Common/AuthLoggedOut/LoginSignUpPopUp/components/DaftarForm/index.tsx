@@ -28,28 +28,38 @@ const DaftarForm = ({ setDaftar }: any) => {
   };
   const handleDaftarOnSubmit = submitDaftar(daftarValue);
 
-  const daftarFormDiscipline = async () => {
+  const daftarFormDiscipline = () => {
     const passwordErrSetter = () => {
       if (
         daftarValue.password !== daftarValue.repassword ||
         daftarValue.password === ""
       ) {
         setErrPassMsg(true);
+        return passwordErrSetter
       }
     };
     const emailErrSetter = () => {
       if (!validateEmail(daftarValue.email) || daftarValue.email === "") {
         setErrEmailMsg(true);
+        return emailErrSetter
       }
     };
     const userSetter = () => {
       if (daftarValue.user_name === "") {
         setErrUserMsg(true);
+        return userSetter
       }
     };
     passwordErrSetter();
     emailErrSetter();
     userSetter();
+    const checker=()=>{
+      if(passwordErrSetter()&&emailErrSetter()&&userSetter())
+      {console.log("test failed")}
+      else {console.log("test passed")}
+    } 
+    
+    checker()
   };
   const ErrDesc = ({ errorValue, errState }: any) => {
     if (errState === true) {
@@ -66,7 +76,7 @@ const DaftarForm = ({ setDaftar }: any) => {
             type="error"
             effect="solid"
             place="top"
-            getContent={(dataTip) => `${dataTip}`}
+            getContent={(dataTip:any) => `${dataTip}`}
           />
         </div>
       );
