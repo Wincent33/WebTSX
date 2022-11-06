@@ -28,36 +28,61 @@ const DaftarForm = ({ setDaftar }: any) => {
   };
   const handleDaftarOnSubmit = submitDaftar(daftarValue);
 
-  const daftarFormDiscipline = async () => {
+  const daftarFormDiscipline = () => {
     const passwordErrSetter = () => {
       if (
         daftarValue.password !== daftarValue.repassword ||
         daftarValue.password === ""
       ) {
         setErrPassMsg(true);
+<<<<<<< HEAD
         return false;
       } else return true;
+=======
+        return passwordErrSetter
+      }
+>>>>>>> 11d270b1861c232aa1f4fa481dbfaa3ca7a6e3c8
     };
     const emailErrSetter = () => {
       if (!validateEmail(daftarValue.email) || daftarValue.email === "") {
         setErrEmailMsg(true);
+<<<<<<< HEAD
         return false;
       } else return true;
+=======
+        return emailErrSetter
+      }
+>>>>>>> 11d270b1861c232aa1f4fa481dbfaa3ca7a6e3c8
     };
     const userSetter = () => {
       if (daftarValue.user_name === "") {
         setErrUserMsg(true);
+<<<<<<< HEAD
         return false;
       } else return true;
+=======
+        return userSetter
+      }
+>>>>>>> 11d270b1861c232aa1f4fa481dbfaa3ca7a6e3c8
     };
     passwordErrSetter();
     emailErrSetter();
     userSetter();
+<<<<<<< HEAD
     if (passwordErrSetter() && emailErrSetter() && userSetter()) {
       console.log("Test Passed");
     } else {
       console.log("Test Failed");
     }
+=======
+    const checker=()=>{
+      if(passwordErrSetter()&&emailErrSetter()&&userSetter())
+      {console.log("test failed")}
+      else {console.log("test passed")}
+    } 
+    
+    checker()
+>>>>>>> 11d270b1861c232aa1f4fa481dbfaa3ca7a6e3c8
   };
   const ErrDesc = ({ errorValue, errState }: any) => {
     if (errState === true) {
@@ -74,7 +99,7 @@ const DaftarForm = ({ setDaftar }: any) => {
             type="error"
             effect="solid"
             place="top"
-            getContent={(dataTip) => `${dataTip}`}
+            getContent={(dataTip:any) => `${dataTip}`}
           />
         </div>
       );
