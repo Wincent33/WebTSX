@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
-import "./style.scss"
+import "./style.scss";
 import SearchGIF from "../../../Assets/Images/search.gif";
+import DataMapper from "./datamapper/index.js";
 var data = require("../../../Assets/Data/MOCK_DATA.json");
 // import Select from "react-select";
 export default function HomeSearchTabs() {
+  DataMapper();
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleTabOnClick = (index: number) => () => {

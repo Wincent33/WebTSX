@@ -35,21 +35,29 @@ const DaftarForm = ({ setDaftar }: any) => {
         daftarValue.password === ""
       ) {
         setErrPassMsg(true);
-      }
+        return false;
+      } else return true;
     };
     const emailErrSetter = () => {
       if (!validateEmail(daftarValue.email) || daftarValue.email === "") {
         setErrEmailMsg(true);
-      }
+        return false;
+      } else return true;
     };
     const userSetter = () => {
       if (daftarValue.user_name === "") {
         setErrUserMsg(true);
-      }
+        return false;
+      } else return true;
     };
     passwordErrSetter();
     emailErrSetter();
     userSetter();
+    if (passwordErrSetter() && emailErrSetter() && userSetter()) {
+      console.log("Test Passed");
+    } else {
+      console.log("Test Failed");
+    }
   };
   const ErrDesc = ({ errorValue, errState }: any) => {
     if (errState === true) {

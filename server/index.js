@@ -22,7 +22,7 @@ app.get("/api/get", (req, res) => {
   const sqlSelect = "SELECT * FROM user";
   db.query(sqlSelect, (err, result) => {
     console.log(result);
-    res.send(result)
+    res.send(result);
   });
 });
 
@@ -59,4 +59,8 @@ app.get("/test", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+app.get("/listing/get", (req, res) => {
+  const query = "SELECT * from properti_detail";
 });
