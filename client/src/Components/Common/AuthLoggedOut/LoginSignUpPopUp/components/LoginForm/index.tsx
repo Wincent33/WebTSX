@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiFillWarning } from "react-icons/ai";
 import "./style.scss";
 import ReactTooltip from "react-tooltip";
 import validateEmail from "../../utils/validateEmail";
+import { valueContainerCSS } from "react-select/dist/declarations/src/components/containers";
+
 const LoginForm = ({ setDaftar }: any) => {
   const [loginValue, setLoginValue] = useState({
     email: "",
@@ -19,23 +21,62 @@ const LoginForm = ({ setDaftar }: any) => {
       [name]: value,
     });
   };
-  const userSetter = () => {
-    if (loginValue.email === "") {
-      setErrEmailMsg(true);
-      return false;
-    } else return true;
-  };
   const emailSetter = () => {
     if (!validateEmail(loginValue.email) || loginValue.email) {
       setErrEmailMsg(true);
       return false;
     } else return true;
   };
+  const passSetter = () => {
+    if (loginValue.password === "") {
+      setErrPassMsg(true);
+      return false;
+    } else return true;
+  };
+  const ErrDesc = ({ errorValue, errState }: any) => {
+    if (errState === true) {
+      return (
+        <div className="err-popup">
+          <AiFillWarning
+            data-tip={errorValue}
+            data-for="error"
+            className="warning-icon"
+          />
+          <ReactTooltip
+            className="err-tooltip"
+            id="error"
+            type="error"
+            effect="solid"
+            place="top"
+            getContent={(dataTip: any) => `${dataTip}`}
+          />
+        </div>
+      );
+    } else return <></>;
+  };
+  const passErr = () => {
+    if (errPassMsg === true) {
+      if (loginValue.password === "") {
+        return "Password Tidak Dapat Kosong";
+      } else return "";
+    } else return "";
+  };
+
+  const emailErr = () => {
+    if (errEmailMsg === true) {
+      if (loginValue.email === "") {
+        return "Harap Masukan Email Anda";
+      }
+      if (!validateEmail(loginValue.email)) {
+        return "Email Format is Not Valid";
+      } else return "";
+    } else return "";
+  };
 
   const handleLoginOnSubmit = () => {
-    userSetter();
+    passSetter();
     emailSetter();
-    if (userSetter() && emailSetter()) {
+    if (passSetter() && emailSetter()) {
       console.log("test failed");
     } else {
       console.log("test passed");
@@ -45,24 +86,31 @@ const LoginForm = ({ setDaftar }: any) => {
     <div className="login-content">
       <h3 className="title">Log In ke Website</h3>
       <div className="login-input">
-        <AiOutlineMail className="icon" size={25} />
-        <input
-          type="email"
-          placeholder="E-mail"
-          name="email"
-          onChange={handleLoginOnChange}
-        />
+        <div className="input">
+          <AiOutlineMail className="icon" size={25} />
+          <input
+            type="email"
+            placeholder="E-mail"
+            name="email"
+            onChange={handleLoginOnChange}
+            value={loginValue.email}
+          />
+        </div>
+        <ErrDesc errorValue={emailErr()} errState={errEmailMsg} />
       </div>
       <div className="login-input">
-        <BsKey className="icon" size={25} />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleLoginOnChange}
-        />
+        <div className="input">
+          <BsKey className="icon" size={25} />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleLoginOnChange}
+            value={loginValue.password}
+          />
+        </div>
+        <ErrDesc errorValue={passErr()} errState={errPassMsg} />
       </div>
-
       <div className="ingat-lupa">
         <div className="ingat-saya">
           <input type="checkbox" />
@@ -86,7 +134,10 @@ const LoginForm = ({ setDaftar }: any) => {
       </div>
       <div className="disclaimer">
         <h5>
-          Saya telah setuju dengan <a href="persyaratan">Persyaratan Layanan</a>{" "}
+          <input type="checkbox" />
+          Saya telah setuju dengan <a href="persyaratan">
+            Persyaratan Layanan
+          </a>{" "}
           dan <a href="kebijakan">Kebijakan Privasi</a> termasuk pengumpulan,
           penggunaan, dan pengungkapan informasi pribadi saya.
         </h5>

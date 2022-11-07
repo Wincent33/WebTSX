@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./style.scss";
 // import "../../Assets/Styles/Global/Home1Bg.scss";
-import SearchTabs from "../../Common/HomeSearchTab";
+// import SearchTabs from "../../Common/HomeSearchTab";
+import SearchTabs from "../../Common/HomeSearchTab/indexTest";
 import NavBar from "../../Common/NavBar/NavBar";
 import LoginDaftarPopUp from "../../Common/AuthLoggedOut/LoginSignUpPopUp";
 import MovingBackground from "../../Common/MovingBackground";

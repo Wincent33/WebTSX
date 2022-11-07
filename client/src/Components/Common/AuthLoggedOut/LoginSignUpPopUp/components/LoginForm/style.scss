@@ -14,33 +14,53 @@
 
   .login-input {
     display: flex;
-    align-items: center;
-    background-color: rgba(20, 55, 95, 1);
-    width: 300px;
-    height: 40px;
-    border-radius: 20px;
+    width: 350px;
+    transform: translateX(20px);
     margin: 5px;
-    .icon {
-      color: white;
-      margin-left: 15px;
+    .input {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      height: 40px;
+      background-color: rgba(20, 55, 95, 1);
+      .icon {
+        color: white;
+        margin-left: 15px;
+      }
+      input {
+        background-color: transparent;
+        width: 80%;
+        border: none;
+        padding-left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
     }
-    input {
-      background-color: transparent;
-      width: 80%;
-      border: none;
-      padding-left: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-      &:focus {
-        outline: none;
+    .err-popup {
+      display: flex;
+      .warning-icon {
+        position: static;
+        right: 0;
+        color: #de5246;
+        height: 40px;
+        width: 40px;
       }
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
+    }
+    .err-tooltip {
+      min-width: max-content;
+      display: flex;
+      justify-content: center;
+      text-align: center;
     }
   }
-
   .ingat-lupa {
     display: flex;
     flex-direction: row;

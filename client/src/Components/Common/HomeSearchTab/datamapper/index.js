@@ -15,8 +15,11 @@ const DataMapper = () => {
   });
   console.log(
     listData
-      .slice(0, 10)
+      // .slice(0, 3000)
       .map((d) => `${d.kecamatan}, ${d.kabupaten}, ${d.provinsi}`)
   );
+  return listData
+    .slice(0, 300)
+    .map((d) => `${d.kecamatan}, ${d.kabupaten}, ${d.provinsi}`);
 };
 export default DataMapper;

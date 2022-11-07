@@ -27,7 +27,7 @@ const DaftarForm = ({ setDaftar }: any) => {
     setErrEmailMsg(false);
   };
   const handleDaftarOnSubmit = submitDaftar(daftarValue);
-  
+
   const userSetter = () => {
     if (daftarValue.user_name === "") {
       setErrUserMsg(true);
