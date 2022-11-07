@@ -55,9 +55,9 @@ const DaftarForm = ({ setDaftar }: any) => {
     emailErrSetter();
     userSetter();
     if (passwordErrSetter() && emailErrSetter() && userSetter()) {
-      handleDaftarOnSubmit();
       console.log("test failed");
     } else {
+      handleDaftarOnSubmit();
       console.log("test passed");
     }
   };
