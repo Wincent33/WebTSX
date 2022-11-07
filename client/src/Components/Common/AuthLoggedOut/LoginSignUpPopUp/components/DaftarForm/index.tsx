@@ -27,6 +27,19 @@ const DaftarForm = ({ setDaftar }: any) => {
     setErrEmailMsg(false);
   };
   const handleDaftarOnSubmit = submitDaftar(daftarValue);
+  
+  const userSetter = () => {
+    if (daftarValue.user_name === "") {
+      setErrUserMsg(true);
+      return false;
+    } else return true;
+  };
+  const emailErrSetter = () => {
+    if (!validateEmail(daftarValue.email) || daftarValue.email === "") {
+      setErrEmailMsg(true);
+      return false;
+    } else return true;
+  };
   const passwordErrSetter = () => {
     if (
       daftarValue.password !== daftarValue.repassword ||
@@ -37,25 +50,12 @@ const DaftarForm = ({ setDaftar }: any) => {
     } else return true;
   };
 
-  const emailErrSetter = () => {
-    if (!validateEmail(daftarValue.email) || daftarValue.email === "") {
-      setErrEmailMsg(true);
-      return false;
-    } else return true;
-  };
-  const userSetter = () => {
-    if (daftarValue.user_name === "") {
-      setErrUserMsg(true);
-      return false;
-    } else return true;
-  };
-
   const daftarFormDiscipline = () => {
     passwordErrSetter();
     emailErrSetter();
     userSetter();
     if (passwordErrSetter() && emailErrSetter() && userSetter()) {
-      handleDaftarOnSubmit;
+      handleDaftarOnSubmit();
       console.log("test failed");
     } else {
       console.log("test passed");
@@ -104,7 +104,6 @@ const DaftarForm = ({ setDaftar }: any) => {
       } else return "";
     } else return "";
   };
-
   const PassErr = () => {
     if (errPassMsg === true) {
       if (daftarValue.password !== daftarValue.repassword) {
