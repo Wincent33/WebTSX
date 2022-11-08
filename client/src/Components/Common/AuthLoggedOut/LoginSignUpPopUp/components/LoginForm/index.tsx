@@ -94,6 +94,7 @@ const LoginForm = ({ setDaftar }: any) => {
             name="email"
             onChange={handleLoginOnChange}
             value={loginValue.email}
+            autoComplete="off"
           />
         </div>
         <ErrDesc errorValue={emailErr()} errState={errEmailMsg} />

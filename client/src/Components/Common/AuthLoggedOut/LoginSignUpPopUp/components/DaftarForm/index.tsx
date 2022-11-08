@@ -126,6 +126,7 @@ const DaftarForm = ({ setDaftar }: any) => {
             onChange={handleDaftarOnChange}
             placeholder="Username"
             value={daftarValue.user_name}
+            autoComplete="off"
           />
         </div>
         <ErrDesc errorValue={UserErr()} errState={errUserMsg} />
@@ -139,6 +140,7 @@ const DaftarForm = ({ setDaftar }: any) => {
             onChange={handleDaftarOnChange}
             placeholder="E-mail"
             value={daftarValue.email}
+            autoComplete="off"
           />
         </div>
         <ErrDesc errorValue={EmailErr()} errState={errEmailMsg} />

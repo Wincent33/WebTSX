@@ -31,9 +31,9 @@ export default function HomeSearchTabs() {
   const onSearchListClick = (searchTerm: any) => {
     inputRef.current.value = searchTerm;
     setValue(inputRef.current.value);
-    // activeTab === 0
-    //   ? console.log(searchTerm, "hi1")
-    //   : console.log(searchTerm, "hi2");
+    activeTab === 0
+      ? console.log(searchTerm, "hi1")
+      : console.log(searchTerm, "hi2");
   };
   const inputRef = useRef<any>(null);
 
