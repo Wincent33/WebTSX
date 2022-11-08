@@ -13,7 +13,9 @@ function InputPage() {
         <NavBar />
         <AuthLoggedOut />
       </div>
-      <InputForm />
+      <div className="body">
+        <InputForm />
+      </div>
     </div>
   );
 }
