@@ -7,6 +7,15 @@ var data = require("../../../Assets/Data/WilayahIndonesia.json");
 export default function HomeSearchTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
+  const titleCase = (str: string) => {
+    var splitStr = str.toLowerCase().split(" ");
+    for (var i = 0; i < splitStr.length; i++) {
+      splitStr[i] =
+        splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(" ");
+  };
+
   const handleTabOnClick = (index: number) => () => {
     setActiveTab(index);
   };
@@ -28,19 +37,36 @@ export default function HomeSearchTabs() {
   };
   const inputRef = useRef<any>(null);
 
-  let listData: any = [];
+
+  let listDataProvinsi: any = [];
+  data.forEach((provinsi: any) => {
+      listDataProvinsi.push({
+        provinsi: titleCase(provinsi.name),
+      });
+  });
+
+  let listDataKabupaten: any = [];
   data.forEach((provinsi: any) => {
     provinsi.regencies.forEach((kabupaten: any) => {
-      kabupaten.districts.forEach((kecamatan: any) => {
-        listData.push({
-          provinsi: provinsi.name,
-          kabupaten: kabupaten.name,
-          kecamatan: kecamatan.name,
-        });
+      listDataKabupaten.push({
+        provinsi: titleCase(provinsi.name),
+        kabupaten: titleCase(kabupaten.name),
       });
     });
   });
 
+  let listDataKecamatan: any = [];
+  data.forEach((provinsi: any) => {
+    provinsi.regencies.forEach((kabupaten: any) => {
+      kabupaten.districts.forEach((kecamatan: any) => {
+        listDataKecamatan.push({
+          provinsi: titleCase(provinsi.name),
+          kabupaten: titleCase(kabupaten.name),
+          kecamatan: titleCase(kecamatan.name),
+        });
+      });
+    });
+  });
   return (
     <section className="SearchTab">
       <div className="container">
@@ -72,6 +98,7 @@ export default function HomeSearchTabs() {
                   value={value}
                   onChange={onChange}
                   ref={inputRef}
+                  autoComplete="off"
                 />
                 <div className="search-button-bg">
                   <button
@@ -82,17 +109,17 @@ export default function HomeSearchTabs() {
                   </button>
                 </div>
                 <div className="search-result">
-                  {listData
+                  {listDataProvinsi
                     .filter((item: any) => {
                       const searchTerm = value.toLowerCase();
                       const place = item.provinsi.toLowerCase();
+                      console.log();
                       return (
                         searchTerm &&
-                        place.startsWith(searchTerm) &&
+                        place.includes(searchTerm) &&
                         place !== searchTerm
                       );
                     })
-                    .slice(0, 1)
                     .map((item: any) => (
                       <div
                         className="location"
@@ -104,13 +131,13 @@ export default function HomeSearchTabs() {
                         {`${item.provinsi}`}
                       </div>
                     ))}
-                  {listData
+                  {listDataKabupaten
                     .filter((item: any) => {
                       const searchTerm = value.toLowerCase();
                       const place = item.kabupaten.toLowerCase();
                       return (
                         searchTerm &&
-                        place.startsWith(searchTerm) &&
+                        place.includes(searchTerm) &&
                         place !== searchTerm
                       );
                     })
@@ -126,13 +153,13 @@ export default function HomeSearchTabs() {
                         {`${item.kabupaten}, ${item.provinsi}`}
                       </div>
                     ))}
-                  {listData
+                  {listDataKecamatan
                     .filter((item: any) => {
                       const searchTerm = value.toLowerCase();
                       const place = item.kecamatan.toLowerCase();
                       return (
                         searchTerm &&
-                        place.startsWith(searchTerm) &&
+                        place.includes(searchTerm) &&
                         place !== searchTerm
                       );
                     })
