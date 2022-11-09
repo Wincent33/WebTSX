@@ -7,7 +7,6 @@ import HomePage from "./Pages/HomePage";
 import InputPage from "./Pages/InputPage";
 import KPRPage from "./Pages/KPRPage";
 import SearchPage from "./Pages/SearchPage";
-import DashBoardTest from "./Pages/DashBoardLearn";
 
 export interface IApplicationProps {}
 
@@ -20,9 +19,7 @@ const App: React.FunctionComponent<IApplicationProps> = (props) => {
         <Route path="/input" element={<InputPage />} />
         <Route path="/simulasi-kpr" element={<KPRPage />} />
         <Route path="/detail" element={<DetailPage />} />
-        <Route path="/dashboard" element={<DashBoard />} />
-        <Route path="/dashboardtest" element={<DashBoardTest />} />
-        
+        <Route path="/dashboard/*" element={<DashBoard />} />
       </Routes>
     </BrowserRouter>
   );
