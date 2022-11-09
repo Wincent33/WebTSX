@@ -24,7 +24,7 @@ function DashBoard() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="app">
+        <div className="dashboard" style={{display:"flex"}} >
           <Sidebar isSidebar={isSidebar} />
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
