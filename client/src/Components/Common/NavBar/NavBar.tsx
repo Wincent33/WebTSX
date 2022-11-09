@@ -2,12 +2,13 @@ import React from "react";
 // import logo from "../../images/1654241759209.jpg";
 // import LoginDaftar from "../LoginDaftarPopUp";
 // import LoginDaftarContent from "../LoginDaftarPopUp/LoginDaftarContent";
-import "./NavTest.css";
+// import "./NavTest.css";
+import "./style.scss"
 
 export default function NavBar() {
   //   const [LoginDaftarPopUp, setLoginDaftarPopUp] = useState(false);
   return (
-    <section>
+    <section className="navbar">
       <nav className="circle">
         <ul>
           <li>
