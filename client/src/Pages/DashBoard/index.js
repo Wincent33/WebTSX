@@ -26,7 +26,7 @@ function DashBoard() {
         <CssBaseline />
         <div className="dashboard" style={{display:"flex"}} >
           <Sidebar isSidebar={isSidebar} />
-          <main className="content">
+          <main className="content" style={{width: "100vw", maxWidth:"1500px"}}>
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
