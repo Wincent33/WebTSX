@@ -3,6 +3,7 @@ import MovingBackground from "../../Components/Common/MovingBackground";
 import "./style.scss";
 import NavBar from "../../Components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../../Components/Common/AuthLoggedOut";
+import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrumbs";
 function DetailPage() {
   return (
     <div className="detail-page">
@@ -12,6 +13,7 @@ function DetailPage() {
         <NavBar />
         <AuthLoggedOut />
       </div>
+      <BreadCrumbs/>
     </div>
   );
 }
