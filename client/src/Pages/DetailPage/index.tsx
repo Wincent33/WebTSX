@@ -4,6 +4,7 @@ import "./style.scss";
 import NavBar from "../../Components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../../Components/Common/AuthLoggedOut";
 import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrumbs";
+import ImageList from "../../Components/DetailPageComponents/Detail1/ImageList";
 function DetailPage() {
   return (
     <div className="detail-page">
@@ -14,6 +15,7 @@ function DetailPage() {
         <AuthLoggedOut />
       </div>
       <BreadCrumbs/>
+      <ImageList/>
     </div>
   );
 }
