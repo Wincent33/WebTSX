@@ -1,0 +1,17 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+.image-showcase {
+  margin: auto;
+  width: 800px;
+  max-height: 500px;
+  .image-gallery-thumbnail {
+    width: fit-content;
+  }
+  .image-gallery-thumbnail-inner {
+    width: 90px;
+  }
+  .image-gallery-thumbnail-image {
+    width: 90px;
+    height: 50px;
+  }
+}

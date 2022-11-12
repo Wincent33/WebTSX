@@ -1,0 +1,47 @@
+@import "../../../../Assets/Styles/Global/Global.scss";
+.fast-detail {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 400px;
+  background-color: $primary4;
+  border-radius: 20px;
+  padding: 20px;
+  color: black;
+  .fast-detail-top {
+    margin: auto;
+  }
+  .fast-detail-bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .fast-detail-bot-left {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      margin: auto;
+      .fast-detail-item {
+        label {
+          color: rgb(61, 61, 61);
+        }
+        p {
+          margin: 0px;
+        }
+      }
+    }
+    .fast-detail-bot-right {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      margin: auto;
+      .fast-detail-item {
+        label {
+          color: rgb(61, 61, 61);
+        }
+        p {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}

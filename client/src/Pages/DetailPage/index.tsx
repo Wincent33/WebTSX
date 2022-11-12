@@ -5,6 +5,8 @@ import NavBar from "../../Components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../../Components/Common/AuthLoggedOut";
 import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrumbs";
 import ImageList from "../../Components/DetailPageComponents/Detail1/ImageList";
+import FastDetail from "../../Components/DetailPageComponents/Detail1/FastDetail";
+
 function DetailPage() {
   return (
     <div className="detail-page">
@@ -14,8 +16,14 @@ function DetailPage() {
         <NavBar />
         <AuthLoggedOut />
       </div>
-      <BreadCrumbs/>
-      <ImageList/>
+      <BreadCrumbs />
+      <div className="detail-judul">
+        <h2>Judul Detail</h2>
+      </div>
+      <div className="detail-top">
+        <FastDetail />
+        <ImageList />
+      </div>
     </div>
   );
 }
