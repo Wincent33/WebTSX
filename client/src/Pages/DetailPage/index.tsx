@@ -7,6 +7,7 @@ import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrum
 import ImageList from "../../Components/DetailPageComponents/Detail1/ImageList";
 import FastDetail from "../../Components/DetailPageComponents/Detail1/FastDetail";
 import Detail2 from "../../Components/DetailPageComponents/Detail2";
+import Detail3 from "../../Components/DetailPageComponents/Detail3";
 function DetailPage() {
   return (
     <div className="detail-page">
@@ -25,6 +26,7 @@ function DetailPage() {
         <ImageList />
       </div>
       <Detail2 />
+      <Detail3 />
     </div>
   );
 }

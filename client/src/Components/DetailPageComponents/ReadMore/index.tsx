@@ -13,7 +13,7 @@ const ReadMore = ({ children }: any) => {
         <div className="gradient"></div>
         <p className="text">{text.slice(0, 600)}</p>
         <div onClick={toggleReadMore} className="read-or-hide">
-          ...Read More
+          V Read More V
         </div>
       </div>
     );

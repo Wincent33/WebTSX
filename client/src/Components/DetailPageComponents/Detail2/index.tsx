@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import ReadMore from "../ReadMore";
-
-// import "./style.scss";
+import "./style.scss";
 const Detail2 = () => {
   return (
     <div className="detail2">

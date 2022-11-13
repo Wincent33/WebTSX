@@ -5,17 +5,63 @@
   width: 100%;
   .collapsed {
     .gradient {
+      height: 220px;
+      max-width: 1300px;
+      width: 100%;
       position: absolute;
-      z-index: 9;
+      z-index: 4;
       background: rgb(255, 255, 255);
       background: linear-gradient(
         0deg,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(0, 0, 0, 1) 100%
+        rgba(255, 255, 255, 1) 20%,
+        rgba(255, 255, 255, 0) 100%
       );
     }
     p {
       font-size: 24px;
+      margin: 10px 0;
+    }
+    .read-or-hide {
+      display: flex;
+      justify-content: center;
+      background: rgb(238, 108, 77);
+      border-radius: 0px 0px 50px 50px;
+      width: 100%;
+      max-width: 1300px;
+      position: relative;
+      z-index: 5;
+      padding: 15px 0;
+      color: white;
+      font-size: 32px;
+      font-weight: 900px;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .not-collapsed {
+    p {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .read-or-hide {
+      display: flex;
+      justify-content: center;
+      background: rgb(238, 108, 77);
+      border-radius: 0px 0px 50px 50px;
+      width: 100%;
+      max-width: 1300px;
+      position: relative;
+      z-index: 5;
+      padding: 15px 0;
+      color: white;
+      font-size: 32px;
+      font-weight: 900px;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
