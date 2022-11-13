@@ -1,5 +1,7 @@
+
 import React from "react";
 import "./style.scss";
+import { BiBed, BiBath, BiCar } from "react-icons/bi";
 const FastDetail = () => {
   const Items = ({ title, value, unit, powerOf }: any) => {
     return (
@@ -17,8 +19,21 @@ const FastDetail = () => {
     <div className="fast-detail">
       <div className="fast-detail-top">
         <h1>Rp 1,4 M</h1>
-        <p>cicilan mulai Rp 8 jt/bulan</p>
-        <div className="fast-detail-top-content"></div>
+        <p>cicilan mulai dari Rp 8 jt/bulan</p>
+        <div className="fast-detail-top-content">
+          <div className="content-item">
+          <p>3</p>
+            <BiBed size={"30px"} color={"white"} />
+          </div>
+          <div className="content-item">
+          <p>3</p>
+            <BiBath size={"30px"} color={"white"} />
+          </div>
+          <div className="content-item">
+          <p>3</p>
+            <BiCar size={"30px"} color={"white"} />
+          </div>
+        </div>
       </div>
       <div className="fast-detail-bot">
         <div className="fast-detail-bot-left">

@@ -4,12 +4,37 @@
   flex-direction: column;
   margin: 10px;
   width: 400px;
-  background-color: $primary4;
+  background: rgb(41,50,65);
+background: linear-gradient(149deg, rgba(41,50,65,1) 0%, rgba(61,90,128,1) 50%, rgba(238,108,77,1) 100%);
+  // background-color: transparent;
+  border: 1px dotted black;
   border-radius: 20px;
-  padding: 20px;
-  color: black;
+  padding: 40px;
+  color: white;
   .fast-detail-top {
-    margin: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    h1 {
+      margin: 0;
+    }
+    p{
+      margin:0;
+    }
+    .fast-detail-top-content {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      .content-item {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+          margin: 0 5px;
+          font-size: 24px;
+        }
+      }
+    }
   }
   .fast-detail-bot {
     display: flex;
@@ -22,7 +47,7 @@
       margin: auto;
       .fast-detail-item {
         label {
-          color: rgb(61, 61, 61);
+          color: $primary3;
         }
         p {
           margin: 0px;
@@ -36,7 +61,7 @@
       margin: auto;
       .fast-detail-item {
         label {
-          color: rgb(61, 61, 61);
+          color: $primary3;
         }
         p {
           margin: 0px;

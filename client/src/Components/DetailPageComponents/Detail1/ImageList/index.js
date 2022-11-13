@@ -20,7 +20,7 @@ const ImageList = () => {
     <div className="image-showcase">
       <ImageGallery
         items={images}
-        showFullscreenButton={false}
+        // showFullscreenButton={false}
         thumbnailPosition="right"
         showPlayButton={false}
         autoPlay={true}
