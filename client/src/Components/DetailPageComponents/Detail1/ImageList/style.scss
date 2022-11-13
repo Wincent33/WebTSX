@@ -2,7 +2,7 @@
 
 .image-showcase {
   margin: auto;
-  width: 800px;
+  width: 900px;
   max-height: 500px;
   .image-gallery-thumbnail {
     width: fit-content;
@@ -16,8 +16,8 @@
   }
   .image-gallery-slide {
     border-radius: 20px;
-}
-.image-gallery-image{
-  border-radius: 20px;
-}
+  }
+  .image-gallery-image {
+    border-radius: 20px;
+  }
 }

@@ -1,0 +1,56 @@
+@import "../../../Assets/Styles/Global/Global.scss";
+
+.detail2 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  .deskripsi-header {
+    padding-left: 90px;
+    h1 {
+      margin: 10px 0;
+    }
+    .divider {
+      margin: 0;
+      width: 500px;
+      border-bottom: 5px solid $primary4;
+    }
+  }
+  .content {
+    margin-left: 80px;
+    padding-left: 10px;
+    width: 1200px;
+    .gradient {
+      position: absolute;
+      z-index: 9;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    .collapsed {
+      position: relative;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      .readmore {
+        margin: 0;
+        .text {
+          font-size: 24px;
+          margin: 10px 0; //   margin-left: 100px;
+        }
+        .read-or-hide {
+          width: inherit;
+          background-color: yellow;
+          height: 50px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

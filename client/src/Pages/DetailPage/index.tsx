@@ -6,7 +6,7 @@ import AuthLoggedOut from "../../Components/Common/AuthLoggedOut";
 import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrumbs";
 import ImageList from "../../Components/DetailPageComponents/Detail1/ImageList";
 import FastDetail from "../../Components/DetailPageComponents/Detail1/FastDetail";
-
+import Detail2 from "../../Components/DetailPageComponents/Detail2";
 function DetailPage() {
   return (
     <div className="detail-page">
@@ -24,6 +24,7 @@ function DetailPage() {
         <FastDetail />
         <ImageList />
       </div>
+      <Detail2 />
     </div>
   );
 }
